@@ -13,7 +13,6 @@ app/models/            Lecturer, Department, Course
 app/controllers/       LecturersController, DepartmentsController, CoursesController
 app/views/             layouts/ + lecturers/ departments/ courses/
 assets/                Bootstrap
-database/tp_mvc25.sql  Skema + data contoh
 ```
 
 # Relasi
@@ -25,7 +24,7 @@ database/tp_mvc25.sql  Skema + data contoh
 - FK `courses.lecturer_id` juga ON DELETE RESTRICT: dosen yang masih mengampu mata kuliah tidak bisa dihapus.
 
 # Alur Program
-
+```
 Pengguna membuka aplikasi
           |
           v
@@ -94,7 +93,7 @@ Pengguna membuka aplikasi
                v
        Daftar Courses
        diperbarui
-
+```
 # Dokumentasi
 [![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/FwuhlMG0Np8)
 
