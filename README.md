@@ -23,7 +23,79 @@ database/tp_mvc25.sql  Skema + data contoh
 - FK ke `departments` memakai ON DELETE RESTRICT: prodi yang masih dipakai dosen/mata kuliah
   tidak bisa dihapus (dicek di controller + dijaga database).
 - FK `courses.lecturer_id` juga ON DELETE RESTRICT: dosen yang masih mengampu mata kuliah tidak bisa dihapus.
-  
+
+# Alur Program
+
+Pengguna membuka aplikasi
+          |
+          v
+       index.php
+          |
+          v
+ Membaca URL dan parameter
+ c=courses, a=index
+          |
+          v
+ CoursesController::index()
+          |
+          v
+ Course.php
+          |
+          v
+ Mengambil data dari database
+ menggunakan SQL JOIN
+          |
+          v
+ Controller mengirim data ke View
+          |
+          v
+ courses/index.php
+          |
+          v
+ layouts/main.php
+          |
+          v
+ Halaman Courses ditampilkan
+          |
+          v
+ Pengguna klik Add New
+          |
+          v
+ CoursesController::create()
+          |
+          v
+ courses/form.php
+          |
+          v
+ Pengguna mengisi formulir
+          |
+          v
+ CoursesController::store()
+          |
+          v
+ Validasi data + CSRF
+          |
+     +----+----+
+     |         |
+   Gagal     Berhasil
+     |         |
+     v         v
+ Kembali    Course.php
+ ke form       |
+     |         v
+     |      Model.php
+     |         |
+     |         v
+     |      Database
+     |         |
+     |         v
+     +----> Redirect
+               |
+               v
+       Daftar Courses
+       diperbarui
+
 # Dokumentasi
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/FwuhlMG0Np8)
 
-
+klik untuk melihat video
